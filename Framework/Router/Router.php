@@ -1,9 +1,10 @@
 <?php
-namespace Framework\Router;
+//namespace Router;
 
-use App\Controllers;
+
 use App\Controllers\ErrorController;
-use Exception;
+use App\Controllers\HomeController;
+
 use Framework\Core\Exception\BadRouteException;
 
 /**
@@ -65,31 +66,46 @@ class Router
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 
+					 $this->controller = $controllerName;
+					 
                 $actionName = 'action' . ucfirst(array_shift($segments));
 
-                $parameters = $segments;
+					 $this->action = $actionName;
+					 
+					 $parameters = $segments;
+					 
+					 $this->parameters = $parameters;
 
+
+					 
+					 
                 // Подключить файл класса-контроллера
-                $controllerFile = ROOT_PATH . '/App\/Controllers/' .
+                $controllerFile = ROOT_PATH . '/App/Controllers/' .
                         $controllerName . '.php';
-
+						
+								
                 if (file_exists($controllerFile)) {
-                    include_once($controllerFile);
+						include_once($controllerFile);
                 }
-
+								
+              
+					 
 					 // Создать объект, вызвать метод (т.е. action)
-					 //$controller = new App\Controller::class;
-                $controllerObject =  $controllerName;
+				
+					 $controllerObject =  $controllerName;
+				
+					//$controllerObject = new \App\Controllers\Controller();
+					
 
                 /* Вызываем необходимый метод ($actionName) у определенного 
                  * класса ($controllerObject) с заданными ($parameters) параметрами
                  */
-                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                //$result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
                 // Если метод контроллера успешно вызван, завершаем работу роутера
-                if ($result != null) {
-                    break;
-                }
+               // if ($result != null) {
+                 //   break;
+               // }
             }
         }
     }

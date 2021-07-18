@@ -1,10 +1,11 @@
 <?php
 namespace App\Controllers;
 
-//use Framework\Core\AbsController;
+
+use Framework\Core\AbsController;
 use Framework\Core\View;
 
-class HomeController {
+class HomeController extends AbsController{
 	
 	public function index(){
       

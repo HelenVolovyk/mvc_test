@@ -43,7 +43,6 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
         'Framework\\Core\\AbsController' => __DIR__ . '/../..' . '/Framework/Core/AbsController.php',
         'Framework\\Core\\Common\\Exception\\BadRouteException' => __DIR__ . '/../..' . '/Framework/Core/Common/Exception/BadRouteException.php',
         'Framework\\Core\\View' => __DIR__ . '/../..' . '/Framework/Core/View.php',
-        'Framework\\Router\\Router' => __DIR__ . '/../..' . '/Framework/Router/Router.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

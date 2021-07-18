@@ -12,5 +12,4 @@ return array(
     'Framework\\Core\\AbsController' => $baseDir . '/Framework/Core/AbsController.php',
     'Framework\\Core\\Common\\Exception\\BadRouteException' => $baseDir . '/Framework/Core/Common/Exception/BadRouteException.php',
     'Framework\\Core\\View' => $baseDir . '/Framework/Core/View.php',
-    'Framework\\Router\\Router' => $baseDir . '/Framework/Router/Router.php',
 );

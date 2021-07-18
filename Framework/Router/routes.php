@@ -1,5 +1,5 @@
 <?php
-namespace Framework\Router;
+namespace Router;
 
 
 

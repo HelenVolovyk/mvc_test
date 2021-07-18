@@ -2,12 +2,13 @@
 namespace Framework\Core;
 
 
-class View
+class AbcView
 {
     protected static $viewPath = '/App/Views/';
 
     public static function render ($view, $args = []){
-        extract($args, EXTR_SKIP); //EXTR_SKIP - Если переменная с таким именем существует, ее текущее значение не будет перезаписано.
+		  extract($args, EXTR_SKIP); 
+		  //EXTR_SKIP - Если переменная с таким именем существует, ее текущее значение не будет перезаписано.
 
         $file = dirname(__DIR__) . static::$viewPath . $view;
 
