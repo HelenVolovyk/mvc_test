@@ -1,5 +1,5 @@
 <?php
-//namespace Router;
+namespace Router;
 
 
 use App\Controllers\ErrorController;

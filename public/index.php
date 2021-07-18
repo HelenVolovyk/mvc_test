@@ -4,6 +4,7 @@
  */
 
 use App\Controllers\ErrorController;
+use Router\Router;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -16,11 +17,11 @@ require_once dirname(__DIR__) . '/Config/config.php';
 require_once  dirname(__DIR__) .'/Framework/Router/Router.php';
 
 
+
+
 // Вызов Router
 
- 
-
-try{
+ try{
 	$router = new Router();
 	$router->run();
 
