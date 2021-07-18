@@ -76,9 +76,6 @@ class Router
 					 
 					 $this->parameters = $parameters;
 
-
-					 
-					 
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT_PATH . '/App/Controllers/' .
                         $controllerName . '.php';
@@ -88,23 +85,20 @@ class Router
 						include_once($controllerFile);
                 }
 								
-              
-					 
+              					 
 					 // Создать объект, вызвать метод (т.е. action)
 				
 					 $controllerObject =  $controllerName;
 				
-					//$controllerObject = new \App\Controllers\Controller();
-					
-
+							
                 /* Вызываем необходимый метод ($actionName) у определенного 
                  * класса ($controllerObject) с заданными ($parameters) параметрами
                  */
-                //$result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+               //  $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
                 // Если метод контроллера успешно вызван, завершаем работу роутера
                // if ($result != null) {
-                 //   break;
+               //     break;
                // }
             }
         }
