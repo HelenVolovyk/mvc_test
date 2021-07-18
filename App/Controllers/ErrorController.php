@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
-use Framework\Core\AbsController;
 
+use Framework\Core\AbsController;
 
 class ErrorController extends AbsController
 {

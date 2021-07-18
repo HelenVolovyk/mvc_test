@@ -7,39 +7,12 @@ namespace Composer\Autoload;
 class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
 {
     public static $prefixLengthsPsr4 = array (
-        'V' => 
-        array (
-            'View\\' => 5,
-        ),
-        'S' => 
-        array (
-            'Session\\' => 8,
-            'Service\\' => 8,
-        ),
-        'R' => 
-        array (
-            'Router\\' => 7,
-        ),
-        'M' => 
-        array (
-            'Models\\' => 7,
-        ),
-        'H' => 
-        array (
-            'Helpers\\' => 8,
-        ),
         'F' => 
         array (
             'Framework\\' => 10,
         ),
-        'D' => 
-        array (
-            'Database\\' => 9,
-        ),
         'C' => 
         array (
-            'Core\\' => 5,
-            'Controllers\\' => 12,
             'Config\\' => 7,
         ),
         'A' => 
@@ -49,45 +22,9 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
     );
 
     public static $prefixDirsPsr4 = array (
-        'View\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App/View',
-        ),
-        'Session\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Framework/Session',
-        ),
-        'Service\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App/Service',
-        ),
-        'Router\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Framework/Router',
-        ),
-        'Models\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App/Models',
-        ),
-        'Helpers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Framework/Helpers',
-        ),
         'Framework\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Framework',
-        ),
-        'Database\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Framework/Database',
-        ),
-        'Core\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Framework/Core',
-        ),
-        'Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App/Controllers',
         ),
         'Config\\' => 
         array (

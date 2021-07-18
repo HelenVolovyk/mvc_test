@@ -11,18 +11,9 @@
 		"psr-4": {
 
 				 "App\\"     			: "App/",
-				 "Controllers\\"     : "App/Controllers",
-				 "Models\\"          : "App/Models",
-				 "Service\\"         : "App/Service",
-				 "View\\"            : "App/View",
-
 				 "Config\\"          : "Config/",
-				 "Framework\\"       : "Framework/",
-				 "Core\\"            : "Framework/Core",
-				 "Database\\"        : "Framework/Database",
-				 "Helpers\\"         : "Framework/Helpers",
-				 "Router\\"          : "Framework/Router",
-				 "Session\\"         : "Framework/Session"
+				 "Framework\\"       : "Framework/"				
+			
 			}
 	  }
 		

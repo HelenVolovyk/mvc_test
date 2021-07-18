@@ -6,16 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'View\\' => array($baseDir . '/App/View'),
-    'Session\\' => array($baseDir . '/Framework/Session'),
-    'Service\\' => array($baseDir . '/App/Service'),
-    'Router\\' => array($baseDir . '/Framework/Router'),
-    'Models\\' => array($baseDir . '/App/Models'),
-    'Helpers\\' => array($baseDir . '/Framework/Helpers'),
     'Framework\\' => array($baseDir . '/Framework'),
-    'Database\\' => array($baseDir . '/Framework/Database'),
-    'Core\\' => array($baseDir . '/Framework/Core'),
-    'Controllers\\' => array($baseDir . '/App/Controllers'),
     'Config\\' => array($baseDir . '/Config'),
     'App\\' => array($baseDir . '/App'),
 );

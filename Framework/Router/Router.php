@@ -78,8 +78,8 @@ class Router
                 }
 
 					 // Создать объект, вызвать метод (т.е. action)
-					 //$controller = new Controllers;
-                $controllerObject = new $controllerName;
+					 //$controller = new App\Controller::class;
+                $controllerObject =  $controllerName;
 
                 /* Вызываем необходимый метод ($actionName) у определенного 
                  * класса ($controllerObject) с заданными ($parameters) параметрами
