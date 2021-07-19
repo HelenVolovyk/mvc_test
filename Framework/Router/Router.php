@@ -1,10 +1,10 @@
 <?php
-namespace Router;
+namespace Framework\Roter;
 
 
 use App\Controllers\ErrorController;
+use App\Controllers;
 use App\Controllers\HomeController;
-
 use Framework\Core\Exception\BadRouteException;
 
 /**
@@ -47,9 +47,10 @@ class Router
      */
     public function run()
     {
-        // Получаем строку запроса
-        $uri = $this->getURI();
 
+        // Получаем строку запроса
+		  $uri = $this->getURI();
+		  
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
 
@@ -66,29 +67,32 @@ class Router
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 
-					 $this->controller = $controllerName;
+					 //$this->controller = $controllerName;
 					 
                 $actionName = 'action' . ucfirst(array_shift($segments));
 
-					 $this->action = $actionName;
+					 //$this->action = $actionName;
 					 
 					 $parameters = $segments;
 					 
-					 $this->parameters = $parameters;
+					 //$this->parameters = $parameters;
 
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT_PATH . '/App/Controllers/' .
                         $controllerName . '.php';
-						
-								
-                if (file_exists($controllerFile)) {
-						include_once($controllerFile);
-                }
+					
+						echo $controllerFile;	
+							
+                //if (file_exists($controllerFile)) {
+						include_once('/App/Controllers/' .  $controllerName . '.php');
+               // }
 								
               					 
 					 // Создать объект, вызвать метод (т.е. action)
-				
-					 $controllerObject =  $controllerName;
+				//echo $controllerFile;
+			
+					 $controllerObject = new $controllerName;
+					 $result = $controllerObject->$actionName;
 				
 							
                 /* Вызываем необходимый метод ($actionName) у определенного 
@@ -97,9 +101,9 @@ class Router
                //  $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
                 // Если метод контроллера успешно вызван, завершаем работу роутера
-               // if ($result != null) {
-               //     break;
-               // }
+               if ($result != null) {
+                   break;
+               }
             }
         }
     }
