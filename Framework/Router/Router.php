@@ -2,14 +2,6 @@
 namespace Framework\Router;
 
 
-use App\Controllers\ErrorController;
-use App\Controllers;
-use App\Controllers\Controller;
-use App\Controllers\HomeController;
-use Framework\Core\AbcController;
-use Framework\Core\Common\Exception;
-use Framework\Core\Exception\BadRouteException;
-
 /**
  * Класс Router
  *
@@ -65,7 +57,7 @@ class Router
 
 						call_user_func_array([$controller, $actionName], $parameters);
 								 
-					}
+					} 
 			             
             }
         }
