@@ -1,8 +1,8 @@
 <?php
 namespace App\Controllers;
 
-
 use Framework\Core\AbsController;
+
 use Framework\Core\View;
 
 class HomeController extends AbsController{

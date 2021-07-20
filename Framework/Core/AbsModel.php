@@ -1,8 +1,11 @@
 <?php
-namespace Framework\Core; 
+namespace Framework\Core;
 
+include('/Const/config.php');
+
+use Config;
 use PDO;
-use Config\Config;
+
 
 class AbsModel
 {
@@ -13,7 +16,6 @@ class AbsModel
         if ($this->db === null){
             $dsn = 'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME . ';charset=utf8';
             $this->db = new PDO($dsn, Config::DB_USER, Config::DB_PASS);
-
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     }

@@ -2,7 +2,7 @@
 namespace Framework\Core;
 
 
-abstract class AbsController
+ class AbsController
 {
     protected function before()
     {

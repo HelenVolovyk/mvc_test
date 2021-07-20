@@ -11,12 +11,9 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
         array (
             'Framework\\' => 10,
         ),
-        'C' => 
-        array (
-            'Config\\' => 7,
-        ),
         'A' => 
         array (
+            'App\\Controllers\\' => 16,
             'App\\' => 4,
         ),
     );
@@ -26,9 +23,9 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
         array (
             0 => __DIR__ . '/../..' . '/Framework',
         ),
-        'Config\\' => 
+        'App\\Controllers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Config',
+            0 => __DIR__ . '/../..' . '/App/Controllers',
         ),
         'App\\' => 
         array (
@@ -37,12 +34,20 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
     );
 
     public static $classMap = array (
+        'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/App/Controllers/Controller.php',
         'App\\Controllers\\ErrorController' => __DIR__ . '/../..' . '/App/Controllers/ErrorController.php',
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/App/Controllers/HomeController.php',
+        'App\\Controllers\\NewsController' => __DIR__ . '/../..' . '/App/Controllers/NewsController.php',
+        'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/App/Controllers/ProductController.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Framework\\Authentication\\Authentication' => __DIR__ . '/../..' . '/Framework/Authentication/Authentication.php',
         'Framework\\Core\\AbsController' => __DIR__ . '/../..' . '/Framework/Core/AbsController.php',
-        'Framework\\Core\\Common\\Exception\\BadRouteException' => __DIR__ . '/../..' . '/Framework/Core/Common/Exception/BadRouteException.php',
-        'Framework\\Core\\View' => __DIR__ . '/../..' . '/Framework/Core/View.php',
+        'Framework\\Core\\AbsModel' => __DIR__ . '/../..' . '/Framework/Core/AbsModel.php',
+        'Framework\\Core\\AbsView' => __DIR__ . '/../..' . '/Framework/Core/AbsView.php',
+        'Framework\\Core\\Common\\Exception' => __DIR__ . '/../..' . '/Framework/Core/Common/Exception.php',
+        'Framework\\Core\\ErrorHandler' => __DIR__ . '/../..' . '/Framework/Core/ErrorHandler.php',
+        'Framework\\Router\\Router' => __DIR__ . '/../..' . '/Framework/Router/Router.php',
+        'Framework\\Session\\Session' => __DIR__ . '/../..' . '/Framework/Session/Session.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

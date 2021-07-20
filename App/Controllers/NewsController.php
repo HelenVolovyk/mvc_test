@@ -5,12 +5,12 @@ use Framework\Core\AbsController;
 
 use Framework\Core\View;
 
-class ProductController extends AbsController{
+class NewsController extends AbsController{
 	
 	public function list(){
       
 	
-		echo 'hi, product';
+		echo 'hi, news';
 	}
 }
   

@@ -2,7 +2,7 @@
 namespace Framework\Core;
 
 
-class AbcView
+class AbsView
 {
     protected static $viewPath = '/App/Views/';
 
