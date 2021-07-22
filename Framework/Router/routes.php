@@ -7,7 +7,8 @@ return array(
    
     
   
-	 'home' 		 => 'home/index', 	
-	 'products'  => 'products/list',
-	 'news'      => "news/list"
+	 'home' 		 	=> 'home/index', 	
+	 'products'  	=> 'product/list',
+	 'categories'  => 'category/index',
+	 'news'      	=> "news/list"
 );

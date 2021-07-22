@@ -44,7 +44,6 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
         'Framework\\Core\\AbsController' => __DIR__ . '/../..' . '/Framework/Core/AbsController.php',
         'Framework\\Core\\AbsModel' => __DIR__ . '/../..' . '/Framework/Core/AbsModel.php',
         'Framework\\Core\\AbsView' => __DIR__ . '/../..' . '/Framework/Core/AbsView.php',
-        'Framework\\Core\\Common\\Exception' => __DIR__ . '/../..' . '/Framework/Core/Common/Exception.php',
         'Framework\\Core\\ErrorHandler' => __DIR__ . '/../..' . '/Framework/Core/ErrorHandler.php',
         'Framework\\Router\\Router' => __DIR__ . '/../..' . '/Framework/Router/Router.php',
         'Framework\\Session\\Session' => __DIR__ . '/../..' . '/Framework/Session/Session.php',

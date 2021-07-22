@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Router;
 
+use Exception;
 
 /**
  * Класс Router
@@ -44,7 +45,8 @@ class Router
 										 
                 $controllerName =  array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
-					
+				
+				
                 $actionName =   ucfirst(array_shift($segments));
 			
 					 $parameters = $segments;
@@ -52,17 +54,20 @@ class Router
 		 							
 					 if (class_exists("App\\Controllers\\" . $controllerName)){
 						$controller = "App\\Controllers\\" . $controllerName;
-												
+					//	echo $controller;
+										
 						$controller = new $controller;
 
 						call_user_func_array([$controller, $actionName], $parameters);
 								 
-					} 
+					}
 			             
-            }
-        }
+				} 
+				// else {
+				// 	throw new \Exception(' Controller not found'); 
+				// }
+        } 
     }
-
 }
 
 		

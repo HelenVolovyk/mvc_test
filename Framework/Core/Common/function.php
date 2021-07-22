@@ -2,38 +2,41 @@
 
 class Template
 {
-  public $layout;
-  public $title;
-  public $params;
-  public $template;
+//   public $layout;
+//   public $title;
+//   public $params;
+//   public $template;
   
   
-	public function __construct($template)
-	{
-		$template = '';
-	   if (!file_exists( $template )){
-			die('unable to locate file');
-		} 
-	  $this->template = $template;
-			}
+// 	public function __construct($template)
+// 	{
+// 		$template = '';
+// 	   if (!file_exists( $template )){
+// 			die('unable to locate file');
+// 		} 
+// 	  $this->template = $template;
+// 			}
 	
 	  
-	public function  set($params, $title, $layout){
-		$this->title = $title;
-	 	$this->params[] = $params;
-	 	$this->layout = $layout;
-	}
+// 	public function  set($params, $title, $layout){
+// 		$this->title = $title;
+// 	 	$this->params[] = $params;
+// 	 	$this->layout = $layout;
+// 	}
 
-	public function renderHTML() {
-	  $template = file_get_contents( $this->$template );
+// 	public function renderHTML() {
+// 	  $template = file_get_contents( $this->$template );
 	  
-	  foreach( $params as $key => $value ) {
-		$this->params[$key] = $value;
-  }
+// 	  foreach( $params as $key => $value ) {
+// 		$this->params[$key] = $value;
+//   }
 	  
-	  	  echo $template;
-	}
+// 	  	  echo $template;
+// 	}
 }
+
+
+
 
 
 	  //  if(is_file($template)){

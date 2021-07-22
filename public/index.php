@@ -4,6 +4,7 @@
  */
 
 use App\Controllers\ErrorController;
+use Framework\Core\AbsModel;
 use Framework\Router\Router;
 
 ini_set('display_errors', 1);
@@ -24,6 +25,8 @@ require_once  dirname(__DIR__) .'/Framework/Router/Router.php';
 	$router->run();
 
 } catch (Exception $e){
-	$controller = new ErrorController();
-	$controller->notFound();
+	// $controller = new ErrorController();
+	// $controller->notFound();
 }
+
+$absModel = new AbsModel();

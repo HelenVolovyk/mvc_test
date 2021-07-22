@@ -1,10 +1,11 @@
 <?php
-include('layouts/header.php');
+use Framework\Core\AbsView;
+AbsView::render('layouts/header.php');
 ?>
 
-<!-- <h1>
-	 <?php echo $title ?> 
-</h1> -->
+<h1>
+	<?php echo $title ?>
+</h1>
 
 
 <div class="content">
@@ -30,14 +31,13 @@ include('layouts/header.php');
 				<div class="categ__text pt-3 pb-3">
 
 					<div class="row d-flex justify-content-around">
+
 						<?php 
-							
-							//include('db/warehouse.php');
-							
-							// foreach($categories as $item_=>$value){
-							// 	echo $value['name'] . ': ' . $value['quantity'], '</br>';
-							// }
-						// ?>
+								foreach($categories as $item_=>$value){
+								echo $value['name'] . ': ' . $value['quantity'], '</br>';
+							}
+						 ?>
+
 					</div>
 
 
@@ -48,4 +48,4 @@ include('layouts/header.php');
 </div>
 
 <?php
-//include('layouts/footer.php');
+\Framework\Core\AbsView::render('layouts/footer.php'); 

@@ -16,7 +16,6 @@ return array(
     'Framework\\Core\\AbsController' => $baseDir . '/Framework/Core/AbsController.php',
     'Framework\\Core\\AbsModel' => $baseDir . '/Framework/Core/AbsModel.php',
     'Framework\\Core\\AbsView' => $baseDir . '/Framework/Core/AbsView.php',
-    'Framework\\Core\\Common\\Exception' => $baseDir . '/Framework/Core/Common/Exception.php',
     'Framework\\Core\\ErrorHandler' => $baseDir . '/Framework/Core/ErrorHandler.php',
     'Framework\\Router\\Router' => $baseDir . '/Framework/Router/Router.php',
     'Framework\\Session\\Session' => $baseDir . '/Framework/Session/Session.php',

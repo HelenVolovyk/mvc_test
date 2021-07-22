@@ -7,12 +7,12 @@ class ErrorController extends AbsController
 {
 
     public function error404(){
-        echo __CLASS__;
+        echo __CLASS__ . 'error404';
         return;
 	 }
 	 
 	 public function notFound(){
-		echo __CLASS__ . 'not found';
+		echo __CLASS__ . ' not found';
 		return;
   }
 }
