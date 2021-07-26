@@ -14,11 +14,14 @@ class Router
 	  *   @var array 
      */
     private $routes;
-
+	 public $controller;
+	 public $controllerName;
+	 public $actionName;
+	 public $parameters=[];
 
     public function __construct()
     {
-        $routesPath = ROOT_PATH . '/Framework/Router/routes.php';
+        $routesPath =  'routes.php';
         $this->routes = include($routesPath);
     }
 
@@ -46,27 +49,22 @@ class Router
                 $controllerName =  array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 				
-				
-                $actionName =   ucfirst(array_shift($segments));
+                $this->actionName =   ucfirst(array_shift($segments));
 			
-					 $parameters = $segments;
-			
-		 							
+					 $this->parameters = $segments;
+					
 					 if (class_exists("App\\Controllers\\" . $controllerName)){
-						$controller = "App\\Controllers\\" . $controllerName;
-					//	echo $controller;
-										
-						$controller = new $controller;
-
-						call_user_func_array([$controller, $actionName], $parameters);
-								 
-					}
+						
+						$this->controller = "App\\Controllers\\" . $controllerName;
+				
+					 } 
+			//else {
+					// 		throw new \Exception(' Controller not found'); 
+					// 	 }
 			             
 				} 
-				// else {
-				// 	throw new \Exception(' Controller not found'); 
-				// }
-        } 
+			
+        }  	
     }
 }
 

@@ -11,6 +11,7 @@ class AbsView
 		  extract($args, EXTR_SKIP); 
 	
 		  $file = ROOT_PATH . static::$viewPath . $view;
+		 
 		
 		        if (file_exists($file)){
 			 
@@ -18,8 +19,16 @@ class AbsView
 			}	else {
             throw new \Exception("$file not found.");
 		  }
+
+		  
 		 
 	 }
+
+	 public static function site_redirect($path = '')
+	{
+		header ("Location" . VIEWS_PATH  . $path);
+		exit;
+	}
 	 
    
 

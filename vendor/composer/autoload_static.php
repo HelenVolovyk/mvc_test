@@ -34,17 +34,27 @@ class ComposerStaticInit2cc2709f6c9079702b7810b5e454e5bf
     );
 
     public static $classMap = array (
+        'App\\Config' => __DIR__ . '/../..' . '/App/Config.php',
+        'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/App/Controllers/AuthController.php',
+        'App\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/App/Controllers/CategoryController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/App/Controllers/Controller.php',
         'App\\Controllers\\ErrorController' => __DIR__ . '/../..' . '/App/Controllers/ErrorController.php',
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/App/Controllers/HomeController.php',
         'App\\Controllers\\NewsController' => __DIR__ . '/../..' . '/App/Controllers/NewsController.php',
         'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/App/Controllers/ProductController.php',
+        'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/App/Controllers/UserController.php',
+        'App\\Models\\Category' => __DIR__ . '/../..' . '/App/Models/Category.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/App/Models/User.php',
+        'App\\Validator\\User\\UserCreateValidator' => __DIR__ . '/../..' . '/App/Validator/User/UserCreateValidator.php',
+        'App\\Validator\\User\\UserUpdateValidator' => __DIR__ . '/../..' . '/App/Validator/User/UserUpdateValidator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Framework\\Authentication\\Authentication' => __DIR__ . '/../..' . '/Framework/Authentication/Authentication.php',
         'Framework\\Core\\AbsController' => __DIR__ . '/../..' . '/Framework/Core/AbsController.php',
         'Framework\\Core\\AbsModel' => __DIR__ . '/../..' . '/Framework/Core/AbsModel.php',
+        'Framework\\Core\\AbsValidator' => __DIR__ . '/../..' . '/Framework/Core/AbsValidator.php',
         'Framework\\Core\\AbsView' => __DIR__ . '/../..' . '/Framework/Core/AbsView.php',
         'Framework\\Core\\ErrorHandler' => __DIR__ . '/../..' . '/Framework/Core/ErrorHandler.php',
+        'Framework\\Helpers\\SessionHelpers' => __DIR__ . '/../..' . '/Framework/Helpers/SessionHelpers.php',
+        'Framework\\Logs\\Logger' => __DIR__ . '/../..' . '/Framework/Logs/Logger.php',
         'Framework\\Router\\Router' => __DIR__ . '/../..' . '/Framework/Router/Router.php',
         'Framework\\Session\\Session' => __DIR__ . '/../..' . '/Framework/Session/Session.php',
     );

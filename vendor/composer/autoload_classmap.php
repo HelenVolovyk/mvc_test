@@ -6,17 +6,27 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Config' => $baseDir . '/App/Config.php',
+    'App\\Controllers\\AuthController' => $baseDir . '/App/Controllers/AuthController.php',
+    'App\\Controllers\\CategoryController' => $baseDir . '/App/Controllers/CategoryController.php',
     'App\\Controllers\\Controller' => $baseDir . '/App/Controllers/Controller.php',
     'App\\Controllers\\ErrorController' => $baseDir . '/App/Controllers/ErrorController.php',
     'App\\Controllers\\HomeController' => $baseDir . '/App/Controllers/HomeController.php',
     'App\\Controllers\\NewsController' => $baseDir . '/App/Controllers/NewsController.php',
     'App\\Controllers\\ProductController' => $baseDir . '/App/Controllers/ProductController.php',
+    'App\\Controllers\\UserController' => $baseDir . '/App/Controllers/UserController.php',
+    'App\\Models\\Category' => $baseDir . '/App/Models/Category.php',
+    'App\\Models\\User' => $baseDir . '/App/Models/User.php',
+    'App\\Validator\\User\\UserCreateValidator' => $baseDir . '/App/Validator/User/UserCreateValidator.php',
+    'App\\Validator\\User\\UserUpdateValidator' => $baseDir . '/App/Validator/User/UserUpdateValidator.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'Framework\\Authentication\\Authentication' => $baseDir . '/Framework/Authentication/Authentication.php',
     'Framework\\Core\\AbsController' => $baseDir . '/Framework/Core/AbsController.php',
     'Framework\\Core\\AbsModel' => $baseDir . '/Framework/Core/AbsModel.php',
+    'Framework\\Core\\AbsValidator' => $baseDir . '/Framework/Core/AbsValidator.php',
     'Framework\\Core\\AbsView' => $baseDir . '/Framework/Core/AbsView.php',
     'Framework\\Core\\ErrorHandler' => $baseDir . '/Framework/Core/ErrorHandler.php',
+    'Framework\\Helpers\\SessionHelpers' => $baseDir . '/Framework/Helpers/SessionHelpers.php',
+    'Framework\\Logs\\Logger' => $baseDir . '/Framework/Logs/Logger.php',
     'Framework\\Router\\Router' => $baseDir . '/Framework/Router/Router.php',
     'Framework\\Session\\Session' => $baseDir . '/Framework/Session/Session.php',
 );

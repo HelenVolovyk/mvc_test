@@ -15,8 +15,8 @@ error_reporting(E_ALL);
 // Подключение файлов системы
 require_once dirname(__DIR__) .'/vendor/autoload.php';
 require_once dirname(__DIR__) . '/Const/const.php';
-require_once  dirname(__DIR__) .'/Framework/Router/Router.php';
 
+session_start();
 
 // Вызов Router
 
@@ -24,7 +24,15 @@ require_once  dirname(__DIR__) .'/Framework/Router/Router.php';
 	$router = new Router; 
 	$router->run();
 
-} catch (Exception $e){
+	 $controller = $router->controller;
+	 $controller = new $controller;
+
+	 $action = $router->actionName;
+	 $parameters = $router->parameters;
+
+	 call_user_func_array([$controller, $action], $parameters);
+	
+  } catch (Exception $e){
 	// $controller = new ErrorController();
 	// $controller->notFound();
 }

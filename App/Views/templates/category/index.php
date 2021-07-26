@@ -1,9 +1,10 @@
 <?php
 use Framework\Core\AbsView;
 AbsView::render('layouts/header.php');
+
 ?>
 
-<h1>
+<h1 class='text-center' mt-3>
 	<?php echo $title ?>
 </h1>
 
