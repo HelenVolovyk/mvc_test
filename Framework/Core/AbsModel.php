@@ -15,10 +15,17 @@ class AbsModel
 		
         if ($this->db === null){
 			  
-            $dsn = 'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME . ';charset=utf8';
-            $this->db = new PDO($dsn, Config::DB_USER, Config::DB_PASS);
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
+				$dsn = 'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME . ';charset=utf8';
+				
+				$opt = array(
+					PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+					PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+					PDO::ATTR_EMULATE_PREPARES   => false
+			  );
+			  
+            $this->db = new PDO($dsn, Config::DB_USER, Config::DB_PASS, $opt);
+							
+			  }
 	 }
 
 

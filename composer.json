@@ -2,16 +2,16 @@
     "name": "helen/shop.com",
     "authors": [
         {
-            "name": "Helen Volovyk",
-            "email": "mr0778240@gmail.com"
+            "name": "Helen Volovyk"
         }
     ],
-	 "require": {},
+	 "require": {
+        "monolog/monolog": "^2.3"
+    },
 	 "autoload": {
 		"psr-4": {
 
 				 "App\\"     			: "App/",
-				 "App\\Controllers\\" 	: "App/Controllers/",
 				 "Framework\\"       : "Framework/"				
 					
 						

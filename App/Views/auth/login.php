@@ -3,7 +3,7 @@ use Framework\Core\AbsView;
 AbsView::render('layouts/header.php');
 ?>
 
-<div class="container">
+<div class="content">
 
 	<div class="row">
 		<div class="col-sm">
@@ -14,6 +14,9 @@ AbsView::render('layouts/header.php');
 				<?php echo $_SESSION['errors']['login']['common'];?>
 			</div>
 			<?php endif; ?>
+
+			<h3>Welcome to our shop</h3>
+
 			<form method="POST" action="/auth/">
 				<div class="form-group">
 					<label for="email">Email</label>

@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Router;
 
+use ErrorException;
 use Exception;
 
 /**
@@ -41,7 +42,7 @@ class Router
         foreach ($this->routes as $uriPattern => $path) {
     
             if (preg_match("~$uriPattern~", $uri)) {
-
+					
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
 					 $segments = explode('/', $internalRoute);
@@ -50,7 +51,6 @@ class Router
                 $controllerName = ucfirst($controllerName);
 				
                 $this->actionName =   ucfirst(array_shift($segments));
-			
 					 $this->parameters = $segments;
 					
 					 if (class_exists("App\\Controllers\\" . $controllerName)){
@@ -58,12 +58,10 @@ class Router
 						$this->controller = "App\\Controllers\\" . $controllerName;
 				
 					 } 
-			//else {
-					// 		throw new \Exception(' Controller not found'); 
-					// 	 }
-			             
+												             
 				} 
-			
+				
+							
         }  	
     }
 }

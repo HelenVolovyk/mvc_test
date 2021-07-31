@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Logger\LogStreamer;
 use App\Models\User;
 use App\Validator\User\UserCreateVaidate;
 use App\Validator\User\UserCreateValidate;
@@ -10,29 +11,30 @@ use App\Validator\User\UserUpdateValidate;
 use App\Validator\User\UserUpdateValidator;
 use Framework\Core\AbsController;
 use Framework\Core\AbsView;
+use Framework\Helpers\SessionHelpers;
 use SessionHandler;
 
 class UserController extends AbsController
 {
 	
-	//public $fields=[];
-	
-	public function store ()
+		public function store ()
 	{
 		
 		 $fields = filter_input_array(INPUT_POST, $_POST, 1);
-		//var_dump($fields);
+	
 		 $userValidate = new UserCreateValidator();
 
 		 if ($userValidate->storeValidate($fields) && !$userValidate->checkEmailOnExist($fields['email'])){
-			 
-			  $user = new User();
 			
+			  $user = new User();
 			  $newUser = $user->create($fields);
-			  var_dump($newUser);
+			 
 			  
 			  if($newUser){
-				  AbsView::site_redirect('auth/login');
+				
+				  AbsView::site_redirect('/login');
+				  LogStreamer::info('new user registered', ['user' => $newUser['name']]);
+				  
 			  } else {
 				  die("500 - Ooops, smth went wrong "); 
 			  }      
@@ -48,7 +50,7 @@ class UserController extends AbsController
 		 $user = new User();
 
 		 $this->data['data'] = $user->getUserById($_SESSION['user_data']['id']);
-		 AbsView::render('User/edit.php', $this->data);
+		 AbsView::render('user/edit.php', $this->data);
 	}
 
 	public function edit(){
@@ -59,16 +61,21 @@ class UserController extends AbsController
 		 $userValidate = new UserUpdateValidator();
 
 		 if ($userValidate->validate($fields) && !$userValidate->checkUserEmail($fields['email'], $fields['id'])){
+			 
 			  if ($fields['old_pass'] != ''){
 					$userData = $user->getUserById($fields['id']);
+				
+				
 					if(password_verify($fields['old_pass'], $userData['pass'])){
+		
 						 if($userValidate->validate_pass($fields['new_pass'])){
 							  unset($fields['old_pass']);
+							 	
 						 } else {
 							  $this->data['data'] = $user->getUserById($_SESSION['user_data']['id']);
 							  $this->data += $userValidate->getErrors_pass();
 
-							  AbsView::render('User/edit.php', $this->data);
+							  AbsView::render('user/edit.php', $this->data);
 							  exit();
 						 }
 					} else {
@@ -76,10 +83,11 @@ class UserController extends AbsController
 							  'type' => 'danger',
 							  'message' => 'Не верный пароль'
 						 ];
-						 AbsView::redirect('User/index');
+						 AbsView::site_redirect('user/index');
 					}
 
 			  } else {
+				var_dump(222); 
 					unset($fields['old_pass'], $fields['new_pass']);
 			  }
 			  $user->update($fields);
@@ -88,15 +96,15 @@ class UserController extends AbsController
 					'type' => 'success',
 					'message' => 'Данные изменены!'
 			  ];
-			  SessionHandler::setUserData('name', ' ' . $fields['name']);
+			  SessionHelpers::setUserData('name', ' ' . $fields['name']);
 
-			  AbsView::redirect('');
+			  AbsView::site_redirect('home');
 			  exit();
 		 }
 		 $this->data['data'] = $user->getUserById($_SESSION['user_data']['id']);
 		 $this->data += $userValidate->getErrors();
 
 
-		 AbsView::render('User/edit.php', $this->data);
+		 AbsView::render('user/edit.php', $this->data);
 	}
 }

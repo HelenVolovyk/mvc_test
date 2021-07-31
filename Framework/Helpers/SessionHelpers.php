@@ -16,8 +16,8 @@ class SessionHelpers
     }
 
     public static function setUserData($key, $value){
-        $_SESSION['user_data'][$key] = $value;
-    }
+		$_SESSION['user_data'][$key] = $value;
+  }
 
     public static function getUserData($key){
 		if (isset($_SESSION['user_data'])) {

@@ -4,8 +4,7 @@
 use App\Models\User;
 use Framework\Core\AbsController;
 use Framework\Core\AbsView;
-use Helpers\SessionHelpers;
-
+use Framework\Helpers\SessionHelpers;
 
 class AuthController extends AbsController
 {
