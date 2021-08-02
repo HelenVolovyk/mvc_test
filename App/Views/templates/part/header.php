@@ -57,7 +57,7 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<a class="nav-link" href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 						</a>
 					</li>
 
@@ -88,21 +88,21 @@
 					</li>
 
 					<li class="header__link">
-						<a class="header__link" href="#">PAYMENT &
+						<a class="header__link" href="/payment">PAYMENT &
 							DELIVERY
 						</a>
 					</li>
 
 					<li class="header__link">
-						<a class="header__link" href="">NEWS</a>
+						<a class="header__link" href="/news">NEWS</a>
 					</li>
 
 					<li class="header__link">
-						<a class="header__link" href="">About</a>
+						<a class="header__link" href="/about">About</a>
 					</li>
 
 					<li class=" header__link">
-						<a class="header__link" href="">Contact</a>
+						<a class="header__link" href="/contact">Contact</a>
 					</li>
 
 

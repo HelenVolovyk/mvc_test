@@ -1,17 +1,16 @@
 <?php
 namespace App\Controllers;
 
-use App\Logger\LogStreamer;
+
 use App\Models\User;
-use App\Validator\User\UserCreateVaidate;
-use App\Validator\User\UserCreateValidate;
 use App\Validator\User\UserCreateValidator;
-use App\Validator\User\UserUpdateVaidate;
-use App\Validator\User\UserUpdateValidate;
 use App\Validator\User\UserUpdateValidator;
 use Framework\Core\AbsController;
 use Framework\Core\AbsView;
 use Framework\Helpers\SessionHelpers;
+use Framework\Logger\LogStreamer;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use SessionHandler;
 
 class UserController extends AbsController
@@ -28,12 +27,18 @@ class UserController extends AbsController
 			
 			  $user = new User();
 			  $newUser = $user->create($fields);
-			 
+			
 			  
 			  if($newUser){
-				
+				 // LogStreamer::info('new user registered', ['user' => $fields['name']]);
+
+				 $logger = new Logger('info');
+				 $logger->pushHandler(new  StreamHandler(ROOT_PATH . '/Framework/Logger/info_log'));
+				 $logger->info('My logger is now ready');
+				 
+				 
 				  AbsView::site_redirect('/login');
-				  LogStreamer::info('new user registered', ['user' => $newUser['name']]);
+				  
 				  
 			  } else {
 				  die("500 - Ooops, smth went wrong "); 

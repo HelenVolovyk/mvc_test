@@ -7,10 +7,18 @@ return array(
     
 	'' 		 		=> 'home/index', 	
 	'products'  	=> 'product/list',
-	'product/show' => 'product/show',
+	'product/show/([0-9]+)' => 'product/show/$1',
+
 	'categories'   => 'category/index',
 	'cart'      	=> "cart/index",
 	 
+	'category/show/([0-9]+)' => 'category/show/$1', 
+
+	 'about'   		=> 'page/about',
+	 'news'   		=> 'page/news',
+	 'contact'   	=> 'page/contact',
+	 'payment'   	=> 'page/payment',
+	
 	 //auth
 	'login' 			=> 'auth/login',
 	'registration' => 'auth/registration',

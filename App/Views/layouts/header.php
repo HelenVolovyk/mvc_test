@@ -22,8 +22,9 @@
 
 <body>
 	<main>
+		<div class="wrapper">
 
-		<?php
+			<?php
 use Framework\Core\AbsView;
 AbsView::render('/templates/part/header.php');
 		?>
